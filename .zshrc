@@ -88,10 +88,11 @@ zstyle ':prezto:load' pmodule \
 	'history' \
 	'git' \
 	'utility' \
-    'completion' \
 	'history-substring-search' \
 	'autosuggestions' \
 	'prompt' \
+    # NOTE: Do not use in WSL2. Tab completion will not be responded.
+    # 'completion' \
 
 # Initialize prezto what you need to do: cd $ZPREZTODIR && git clone --recursive https://github.com/sorin-ionescu/prezto.git 
 antigen use prezto
@@ -220,3 +221,8 @@ export LANGUAGE=en_US:en
 export LC_ALL=en_US.UTF-8
 export CC=clang
 export CXX=clang++
+
+# NVIM for WSL2
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
